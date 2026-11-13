@@ -3,7 +3,24 @@ resolver = "2"
 members = ["programs/*", "client"]
 
 [workspace.metadata.cli]
-solana = "3.1.10"
+solana = "4.1.2"
+
+[workspace.dependencies]
+anchor-lang = { version = "1.2.1", default-features = false, features = [
+    "solana-v4",
+    "init-if-needed",
+] }
+anchor-spl = { version = "1.2.1", default-features = false, features = [
+    "solana-v4",
+    "associated_token",
+    "mint",
+    "token",
+    "token_2022",
+    "token_2022_extensions",
+] }
+bytemuck = "1.20.0"
+anyhow = "1.0.71"
+proptest = "1"
 
 [profile.test]
 opt-level = 0

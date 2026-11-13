@@ -9,14 +9,16 @@ use solana_account_decoder::{
     parse_token::{TokenAccountType, UiAccountState},
     UiAccountData, UiAccountEncoding,
 };
-use solana_client::{
-    rpc_client::RpcClient,
-    rpc_config::{RpcAccountInfoConfig, RpcProgramAccountsConfig, RpcTransactionConfig},
-    rpc_filter::{Memcmp, RpcFilterType},
-    rpc_request::TokenAccountsFilter,
-};
 use solana_commitment_config::CommitmentConfig;
 use solana_compute_budget_interface::ComputeBudgetInstruction;
+use solana_rpc_client::{
+    api::{
+        config::{RpcAccountInfoConfig, RpcProgramAccountsConfig, RpcTransactionConfig},
+        filter::{Memcmp, RpcFilterType},
+        request::TokenAccountsFilter,
+    },
+    rpc_client::RpcClient,
+};
 use solana_sdk::{
     message::Message,
     program_pack::Pack,
@@ -2093,7 +2095,8 @@ fn main() -> Result<()> {
                 pool_config.pool_id_account.unwrap()
             };
             println!("pool_id:{}", pool_id);
-            let position_accounts_by_pool = rpc_client.get_program_accounts_with_config(
+            let position_accounts_by_pool = get_program_accounts_with_config(
+                &rpc_client,
                 &pool_config.raydium_v3_program,
                 RpcProgramAccountsConfig {
                     filters: Some(vec![
@@ -2149,7 +2152,8 @@ fn main() -> Result<()> {
                 pool_config.pool_id_account.unwrap()
             };
             println!("pool_id:{}", pool_id);
-            let position_accounts_by_pool = rpc_client.get_program_accounts_with_config(
+            let position_accounts_by_pool = get_program_accounts_with_config(
+                &rpc_client,
                 &pool_config.raydium_v3_program,
                 RpcProgramAccountsConfig {
                     filters: Some(vec![
@@ -2189,7 +2193,8 @@ fn main() -> Result<()> {
                 pool_config.pool_id_account.unwrap()
             };
             println!("pool_id:{}", pool_id);
-            let tick_arrays_by_pool = rpc_client.get_program_accounts_with_config(
+            let tick_arrays_by_pool = get_program_accounts_with_config(
+                &rpc_client,
                 &pool_config.raydium_v3_program,
                 RpcProgramAccountsConfig {
                     filters: Some(vec![

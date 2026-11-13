@@ -32,14 +32,14 @@ unexpected_cfgs = { level = "warn", check-cfg = [
 ] }
 
 [dependencies]
-anchor-lang = { version = "=1.0.2", features = ["init-if-needed"] }
-anchor-spl = { version = "=1.0.2", features = ["metadata", "memo"] }
+anchor-lang = { workspace = true }
+anchor-spl = { workspace = true, features = ["metadata", "memo"] }
 uint = { git = "https://github.com/raydium-io/parity-common", package = "uint" }
-bytemuck = { version = "1.19.0", features = ["derive", "min_const_generics"] }
+bytemuck = { workspace = true, features = ["derive", "min_const_generics"] }
 arrayref = { version = "0.3.6" }
 solana-security-txt = "1.1.1"
 
 [dev-dependencies]
 quickcheck = "0.9"
-proptest = "1.0"
+proptest = { workspace = true }
 rand = "0.8.5"

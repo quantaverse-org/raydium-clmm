@@ -236,6 +236,7 @@ pub fn parse_program_instruction(
                     recent_blockhash: "".to_string(),
                     instructions: Vec::new(),
                     address_table_lookups: None,
+                    transaction_config: None,
                 },
             }
         }
@@ -245,6 +246,7 @@ pub fn parse_program_instruction(
             recent_blockhash: "".to_string(),
             instructions: Vec::new(),
             address_table_lookups: None,
+            transaction_config: None,
         },
     };
     // append lookup table keys if necessary

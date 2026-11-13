@@ -3,7 +3,7 @@ use anyhow::Result;
 use raydium_clmm::libraries::fixed_point_64;
 use raydium_clmm::libraries::*;
 use raydium_clmm::states::*;
-use solana_client::rpc_client::RpcClient;
+use solana_rpc_client::rpc_client::RpcClient;
 use solana_sdk::program_pack::Pack;
 use solana_sdk::{account::Account, pubkey::Pubkey};
 use spl_token_2022::{

@@ -1,7 +1,7 @@
 use super::super::{read_keypair_file, ClientConfig};
 use anchor_client::{Client, Cluster};
 use anyhow::Result;
-use solana_client::rpc_client::RpcClient;
+use solana_rpc_client::rpc_client::RpcClient;
 use solana_sdk::{
     account::WritableAccount,
     instruction::Instruction,

@@ -8,13 +8,13 @@ Raydium-Amm-v3 is an open-sourced concentrated liquidity market maker (CLMM) pro
 
    ```shell
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-   rustup default 1.86.0
+   rustup default 1.97.1
    ```
 
 2. Install `Solana`
 
    ```shell
-   sh -c "$(curl -sSfL https://release.anza.xyz/v2.3.0/install)"
+   sh -c "$(curl -sSfL https://release.anza.xyz/v4.1.2/install)"
    ```
 
    then run `solana-keygen new` to create a keypair at the default location.
@@ -23,9 +23,9 @@ Raydium-Amm-v3 is an open-sourced concentrated liquidity market maker (CLMM) pro
 
    ```shell
    # Installing using Anchor version manager (avm)
-   cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+   cargo install --git https://github.com/otter-sec/anchor avm --locked --force
    # Install anchor
-   avm install 0.32.1
+   avm install 1.2.1
    ```
 
 ## Quickstart
